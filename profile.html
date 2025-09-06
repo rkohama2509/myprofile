@@ -1,0 +1,252 @@
+1 <!DOCTYPE html>
+  <html lang="ja">
+   <head>
+     <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <title>自己紹介 - サイドバー</title>
+     <style>
+       :root {
+         --bg: #0f172a;
+         --panel: #111827;
+         --panel2: #0b1220;
+         --text: #e5e7eb;
+         --muted: #9ca3af;
+         --accent: #22d3ee; /* cyan */
+         --ring: rgba(34, 211, 238, 0.25);
+         --shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+       }
+       * {
+         box-sizing: border-box;
+       }
+       html,
+       body {
+         height: 100%;
+       }
+       body {
+         margin: 0;
+         font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans JP,
+           Helvetica, Arial, sans-serif;
+         line-height: 1.7;
+         color: var(--text);
+         background: radial-gradient(
+             900px 600px at 10% -10%,
+             #1e293b 0%,
+             #0b1020 55%
+           ),
+           var(--bg);
+       }
+       .wrap {
+         display: grid;
+         min-height: 100dvh;
+         grid-template-columns: 1fr;
+       }
+       aside {
+         background: linear-gradient(
+           180deg,
+           var(--panel) 0%,
+           var(--panel2) 100%
+         );
+         padding: 28px 20px;
+         border-right: 1px solid #1f2937;
+       }
+       main {
+         padding: 28px 20px;
+       }
+       .card {
+         background: rgba(255, 255, 255, 0.02);
+         border: 1px solid rgba(255, 255, 255, 0.08);
+         border-radius: 16px;
+         padding: 20px;
+         box-shadow: var(--shadow);
+         backdrop-filter: blur(4px);
+       }
+       .avatar {
+         display: grid;
+         place-items: center;
+       }
+       .avatar img {
+         width: 120px;
+         height: 120px;
+         border-radius: 50%;
+         border: 3px solid rgba(255, 255, 255, 0.2);
+       }
+       h1 {
+        font-size: 26px;
+         margin: 12px 0 0;
+       }
+       .role {
+         color: var(--muted);
+         margin: 6px 0 16px;
+         font-size: 14px;
+       }
+       .pill{
+         display: inline-block;
+         padding: 6px 10px;
+         border-radius: 999px;
+         background: #0ea5b3;
+         color: #021014;
+         font-weight: 600;
+         font-size: 12px;
+         margin: 0 6px 6px 0;
+       }
+       .nav a {
+         display: block;
+         color: var(--text);
+         text-decoration: none;
+         padding: 8px 10px;
+         border-radius: 8px;
+       }
+       .nav a:hover {
+         background: rgba(255, 255, 255, 0.06);
+       }
+       section h2 {
+         font-size: 18px;
+         margin: 0 0 10px;
+         letter-spacing: 0.02em;
+       }
+       .grid {
+         display: grid;
+         gap: 16px;
+         grid-template-columns: 1fr;
+       }
+       .timeline {
+         border-left: 2px solid rgba(255, 255, 255, 0.12);
+         padding-left: 14px;
+       }
+       .timeline li {
+         margin: 0 0 12px;
+       }
+       .cta {
+         display: inline-block;
+         margin-top: 8px;
+         padding: 10px 14px;
+         border-radius: 10px;
+         color: #03121a;
+         background: var(--accent);
+         text-decoration: none;
+         box-shadow: 0 8px 18px var(--ring);
+       }
+       @media (min-width: 960px) {
+         .wrap {
+           grid-template-columns: 280px 1fr;
+         }
+         main {
+           padding: 40px;
+         }
+       }
+     </style>
+   </head>
+   <body>
+     <div class="wrap">
+       <aside>
+         <div class="card avatar">
+           <img src="icon_user_2.png" alt="アバター" />
+           <h1>小濱 凜太郎</h1>
+           <p class="role">バックエンド志望 / 夜型エンジニア</p>
+           <div>
+             <span class="pill">HTML</span>
+             <span class="pill">CSS</span>
+             <span class="pill">Figma</span>
+             <span class="pill">学習継続</span>
+           </div>
+         </div>
+         <nav class="nav" aria-label="個人ナビ">
+           <a href="#about">自己紹介</a>
+           <a href="#skills">スキル</a>
+           <a href="#history">これまで</a>
+           <a href="#contact">連絡先</a>
+         </nav>
+       </aside>
+ 
+       <main>
+         <section id="about" class="card">
+           <h2>自己紹介</h2>
+           <p>
+             UIデザインとコーディングを行き来しながら、使いやすいWeb体験を探求しています。
+          </p>
+         </section>
+ 
+         <section id="skills" class="grid" style="margin-top: 16px">
+           <div class="card">
+             <h2>スキル</h2>
+             <ul>
+               <li>HTML5 / セマンティックなマークアップ</li>
+               <li>CSS / レイアウト・タイポグラフィ</li>
+               <li>アクセシビリティ配慮</li>
+             </ul>
+           </div>
+           <div class="card">
+             <h2>興味</h2>
+             <ul>
+               <li>ダークテーマ設計</li>
+               <li>マイクロアニメーション</li>
+               <li>コンポーネント設計</li>
+             </ul>
+           </div>
+         </section>
+ 
+         <section id="history" class="card" style="margin-top: 16px">
+           <h2>これまで</h2>
+           <ul class="timeline">
+             <li><strong>2024</strong> 学習開始、ポートフォリオ公開</li>
+             <li><strong>2025</strong> 制作案件のサポートを経験</li>
+           </ul>
+           <a class="cta" href="#">作品を見る</a>
+         </section>
+ 
+         <section id="contact" class="card" style="margin-top: 16px">
+           <h2>連絡先</h2>
+           <form>
+             <label for="name">お名前</label>
+             <input
+               id="name"
+               name="name"
+               type="text"
+               placeholder="小濱 凜太郎"
+               style="
+                 width: 100%;
+                 padding: 10px;
+                 border-radius: 10px;
+                 border: 1px solid rgba(255, 255, 255, 0.2);
+                 background: rgba(255, 255, 255, 0.05);
+                 color: var(--text);
+               "
+             />
+             <label for="email">メール</label>
+             <input
+               id="email"
+               name="email"
+               type="email"
+               placeholder="r-kohama@lunandmoon.jp"
+               style="
+                 width: 100%;
+ 
+                padding: 10px;
+                 border-radius: 10px;
+                 border: 1px solid rgba(255, 255, 255, 0.2);
+                 background: rgba(255, 255, 255, 0.05);
+                 color: var(--text);
+               "
+             />
+             <label for="msg">メッセージ</label>
+             <textarea
+               id="msg"
+               name="message"
+               rows="4"
+               placeholder="お気軽にどうぞ"
+               style="
+                 width: 100%;
+                 padding: 10px;
+                 border-radius: 10px;
+                 border: 1px solid rgba(255, 255, 255, 0.2);
+                 background: rgba(255, 255, 255, 0.05);
+                 color: var(--text);
+               "
+             ></textarea>
+             <button type="submit" class="cta">送信</button>
+           </form>
+         </section>
+       </main>
+     </div>
+   </body>
+  </html>
